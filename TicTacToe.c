@@ -52,16 +52,18 @@ void main(){
                         printf("\n=== Voce deseja ser (O) ou (X)? ===\n");
                         scanf(" %c", &jogador);
                     }
+                    
+                    
 
-                printf("\n     |     |     \n");
-                printf("  %c  |  %c  |  %c  \n", matPosi[0][0],matPosi[1][0],matPosi[2][0]);
-                printf("_____|_____|_____\n");
-                printf("     |     |     \n");
-                printf("  %c  |  %c  |  %c  \n", matPosi[0][1],matPosi[1][1],matPosi[2][1]);
-                printf("_____|_____|_____\n");
-                printf("     |     |     \n");
-                printf("  %c  |  %c  |  %c  \n", matPosi[0][2],matPosi[1][2],matPosi[2][2]);
-                printf("     |     |     \n");
+                printf("\t     |     |     \n");
+                printf("\t  %c  |  %c  |  %c  \n", matPosi[0][0],matPosi[1][0],matPosi[2][0]);
+                printf("\t_____|_____|_____\n");
+                printf("\t     |     |     \n");
+                printf("\t  %c  |  %c  |  %c  \n", matPosi[0][1],matPosi[1][1],matPosi[2][1]);
+                printf("\t_____|_____|_____\n");
+                printf("\t     |     |     \n");
+                printf("\t  %c  |  %c  |  %c  \n", matPosi[0][2],matPosi[1][2],matPosi[2][2]);
+                printf("\t     |     |     \n");
 
                 printf("\nEscolha uma posicao para jogar!\n");
                 scanf("%d", &jogada);
@@ -192,15 +194,15 @@ void main(){
                     break;
                 }
                 
-                printf("\n     |     |     \n");
-                printf("  %c  |  %c  |  %c  \n", matPosi[0][0],matPosi[1][0],matPosi[2][0]);
-                printf("_____|_____|_____\n");
-                printf("     |     |     \n");
-                printf("  %c  |  %c  |  %c  \n", matPosi[0][1],matPosi[1][1],matPosi[2][1]);
-                printf("_____|_____|_____\n");
-                printf("     |     |     \n");
-                printf("  %c  |  %c  |  %c  \n", matPosi[0][2],matPosi[1][2],matPosi[2][2]);
-                printf("     |     |     \n");
+                printf("\t     |     |     \n");
+                printf("\t  %c  |  %c  |  %c  \n", matPosi[0][0],matPosi[1][0],matPosi[2][0]);
+                printf("\t_____|_____|_____\n");
+                printf("\t     |     |     \n");
+                printf("\t  %c  |  %c  |  %c  \n", matPosi[0][1],matPosi[1][1],matPosi[2][1]);
+                printf("\t_____|_____|_____\n");
+                printf("\t     |     |     \n");
+                printf("\t  %c  |  %c  |  %c  \n", matPosi[0][2],matPosi[1][2],matPosi[2][2]);
+                printf("\t     |     |     \n");
                 
                 // -- cima
                 if (matPosi[0][0] == jogador && matPosi[1][0] == jogador && matPosi[2][0] == jogador)
@@ -289,7 +291,8 @@ void main(){
             
             jogador = 'a';
 
-            printf("Digite '1' para um novo jogo!");
+            printf("<1- Novo Jogo>\n");
+            printf("<2- Sair>\n");
             scanf("%d", &jogar);
             
     
