@@ -1,0 +1,38 @@
+int minimax(char tab[3][3], int profundidade, int isMax) {
+    int score = avaliar(tab);
+
+    if(score == 10 || score == -10)
+        return score;
+
+    if(!movimentosRestantes(tab))
+        return 0;
+
+    if(isMax) { // IA
+        int melhor = -1000;
+        for(int i=0;i<3;i++) {
+            for(int j=0;j<3;j++) {
+                if(tab[i][j] != 'X' && tab[i][j] != 'O') {
+                    char backup = tab[i][j];
+                    tab[i][j] = IA;
+                    melhor = (melhor > minimax(tab, profundidade+1, 0)) ? melhor : minimax(tab, profundidade+1, 0);
+                    tab[i][j] = backup;
+                }
+            }
+        }
+        return melhor;
+    } 
+    else { // Humano
+        int melhor = 1000;
+        for(int i=0;i<3;i++) {
+            for(int j=0;j<3;j++) {
+                if(tab[i][j] != 'X' && tab[i][j] != 'O') {
+                    char backup = tab[i][j];
+                    tab[i][j] = HUMANO;
+                    melhor = (melhor < minimax(tab, profundidade+1, 1)) ? melhor : minimax(tab, profundidade+1, 1);
+                    tab[i][j] = backup;
+                }
+            }
+        }
+        return melhor;
+    }
+}
