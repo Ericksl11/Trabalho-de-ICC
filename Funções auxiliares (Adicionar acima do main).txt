@@ -1,0 +1,44 @@
+#define HUMANO 'X'
+#define IA 'O'
+
+// Verifica se ainda existem jogadas disponíveis
+int movimentosRestantes(char tab[3][3]) {
+    for(int i=0;i<3;i++)
+        for(int j=0;j<3;j++)
+            if(tab[i][j] != 'X' && tab[i][j] != 'O')
+                return 1;
+    return 0;
+}
+
+// Avalia o estado do tabuleiro
+int avaliar(char tab[3][3]) {
+
+    // Linhas
+    for(int i=0;i<3;i++) {
+        if(tab[i][0]==tab[i][1] && tab[i][1]==tab[i][2]) {
+            if(tab[i][0]==IA) return +10;
+            if(tab[i][0]==HUMANO) return -10;
+        }
+    }
+
+    // Colunas
+    for(int j=0;j<3;j++) {
+        if(tab[0][j]==tab[1][j] && tab[1][j]==tab[2][j]) {
+            if(tab[0][j]==IA) return +10;
+            if(tab[0][j]==HUMANO) return -10;
+        }
+    }
+
+    // Diagonais
+    if(tab[0][0]==tab[1][1] && tab[1][1]==tab[2][2]) {
+        if(tab[0][0]==IA) return +10;
+        if(tab[0][0]==HUMANO) return -10;
+    }
+
+    if(tab[2][0]==tab[1][1] && tab[1][1]==tab[0][2]) {
+        if(tab[2][0]==IA) return +10;
+        if(tab[2][0]==HUMANO) return -10;
+    }
+
+    return 0;
+}
