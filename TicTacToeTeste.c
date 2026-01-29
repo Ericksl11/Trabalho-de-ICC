@@ -186,8 +186,9 @@ void main(){
     char jogador_vez;
 
     // Troca dos jogadores
-    int teste = 0;
+    int troca = 0;
     
+    // Armazenar a melhor jogada da maquina
     int jogada_maquina;
 
     // Contador de jogadas
@@ -195,7 +196,7 @@ void main(){
 
     printf("\t========== JOGO DA VELHA ==========\n");
 
-        // Teste de reiniciar o jogo
+        // Reiniciar o jogo
         while (jogar == 1)
         {
 
@@ -203,7 +204,7 @@ void main(){
             while (win != 1)
             {   
 
-                if (teste == 1)
+                if (troca == 1)
                 {
                     // Troca dos jogadores entre humano - maquina
                     if (jogador_vez == jogador)
@@ -217,7 +218,7 @@ void main(){
 
                 }
                     
-                    
+                    // Trocar o jogador após cada rodada
                     if (escolha == 0)
                     {
                         printf("\nQuem deseja comecar o jogo?\n");
@@ -234,16 +235,13 @@ void main(){
                         jogador_vez = maquina;
                     }
                     }
-
-                    
-                    printf("\n%d\n", cont);
                     
                     
 
                 printf_tabuleiro(matPosi);
                 
                 
-                 
+                    // Vez do jogador e vez da maquina
                     if (jogador_vez == jogador)
                     {
                         printf("\nEscolha uma posicao para jogar!\n");
@@ -271,205 +269,288 @@ void main(){
                     printf("ESCOLHA NOVAMENTE...\n");
                     scanf("%d", &jogada);
                 }
-                
-            
+
+                // Verificar se a posição esta ocupada
                 switch (jogada)
                 {
-                    // Ajustar posição ocupada 1:
-                    case 1:
-                    if (matPosi[0][0] == 'X' || matPosi[0][0] == 'O'){
+                case 1:
+                if (matPosi[0][0] == jogador || matPosi[0][0] == maquina)
+                    {
                         printf("POSICAO JA OCUPADA!\n");
                         printf("ESCOLHA NOVAMENTE...\n");
-                        
+                        scanf("%d", &jogada);
                     }
-                    else 
+                    break;
+
+                case 2:
+                if (matPosi[0][1] == jogador || matPosi[0][1] == maquina)
                     {
-                        matPosi[0][0] = jogador_vez;
+                        printf("POSICAO JA OCUPADA!\n");
+                        printf("ESCOLHA NOVAMENTE...\n");
+                        scanf("%d", &jogada);
                     }
+                break;
+
+                case 3:
+                if (matPosi[0][2] == jogador || matPosi[0][2] == maquina)
+                    {
+                        printf("POSICAO JA OCUPADA!\n");
+                        printf("ESCOLHA NOVAMENTE...\n");
+                        scanf("%d", &jogada);
+                    }
+                break;
+
+                case 4:
+                if (matPosi[1][0] == jogador || matPosi[1][0] == maquina)
+                    {
+                        printf("POSICAO JA OCUPADA!\n");
+                        printf("ESCOLHA NOVAMENTE...\n");
+                        scanf("%d", &jogada);
+                    }
+                break;
+
+                case 5:
+                if (matPosi[1][1] == jogador || matPosi[1][1] == maquina)
+                    {
+                        printf("POSICAO JA OCUPADA!\n");
+                        printf("ESCOLHA NOVAMENTE...\n");
+                        scanf("%d", &jogada);
+                    }
+                break;
+
+                case 6:
+                if (matPosi[1][2] == jogador || matPosi[1][2] == maquina)
+                    {
+                        printf("POSICAO JA OCUPADA!\n");
+                        printf("ESCOLHA NOVAMENTE...\n");
+                        scanf("%d", &jogada);
+                    }
+                break;
+
+                case 7:
+                if (matPosi[2][0] == jogador || matPosi[2][0] == maquina)
+                    {
+                        printf("POSICAO JA OCUPADA!\n");
+                        printf("ESCOLHA NOVAMENTE...\n");
+                        scanf("%d", &jogada);
+                    }
+                break;
+
+                case 8:
+                if (matPosi[2][1] == jogador || matPosi[2][1] == maquina)
+                    {
+                        printf("POSICAO JA OCUPADA!\n");
+                        printf("ESCOLHA NOVAMENTE...\n");
+                        scanf("%d", &jogada);
+                    }
+                break;
+
+                case 9:
+                if (matPosi[2][2] == jogador || matPosi[2][2] == maquina)
+                    {
+                        printf("POSICAO JA OCUPADA!\n");
+                        printf("ESCOLHA NOVAMENTE...\n");
+                        scanf("%d", &jogada);
+                    }
+                break;
+
+                
+                default:
+                break;
+                }
+                
+                
+
+                // Atribuir X ou O no tabuleiro
+                switch (jogada)
+                {
+                    case 1:
                     
+                        matPosi[0][0] = jogador_vez;
                     
                     break;
                     
                     case 2:
-                    // Ajustar posição ocupada
-                    if (matPosi[0][1] == jogador_vez){
-                        printf("POSICAO JA OCUPADA!\n");
-                        printf("ESCOLHA NOVAMENTE...\n");
-                    }
-                    else
-                    {
-                        matPosi[0][1] = jogador_vez;
-                        
-                    }
-                    break;
                     
+                        matPosi[0][1] = jogador_vez;                    
+                    
+                    break;
+
                     case 3:
-                    // Ajustar posição ocupada
-                    if (matPosi[0][2] == jogador_vez){
-                        printf("POSICAO JA OCUPADA!\n");
-                        printf("ESCOLHA NOVAMENTE...\n");
-                    }
-                    else
-                    {
+
                         matPosi[0][2] = jogador_vez;
                         
-                    }            
                     break;
                     
                     case 4:
-                    // Ajustar posição ocupada
-                    if (matPosi[1][0] == jogador_vez){
-                        printf("POSICAO JA OCUPADA!\n");
-                        printf("ESCOLHA NOVAMENTE...\n");
-                    }
-                    else
-                    {
+
                         matPosi[1][0] = jogador_vez;
                         
-                    }
                     break;
                     
                     case 5:
-                    // Ajustar posição ocupada
-                    if (matPosi[1][1] == jogador_vez){
-                        printf("POSICAO JA OCUPADA!\n");
-                        printf("ESCOLHA NOVAMENTE...\n");
-                    }
-                    else
-                    {
+
                         matPosi[1][1] = jogador_vez;
                         
-                    }
                     break;
                     
                     case 6:
-                    // Ajustar posição ocupada
-                    if (matPosi[1][2] == jogador_vez){
-                        printf("POSICAO JA OCUPADA!\n");
-                        printf("ESCOLHA NOVAMENTE...\n");
-                    }
-                    else
-                    {
+
                         matPosi[1][2] = jogador_vez;
                         
-                    }
                     break;
                     
                     case 7:
-                    // Ajustar posição ocupada
-                    if (matPosi[2][0] == jogador_vez){
-                        printf("POSICAO JA OCUPADA!\n");
-                        printf("ESCOLHA NOVAMENTE...\n");
-                    }
-                    else
-                    {
+
                         matPosi[2][0] = jogador_vez;
                         
-                    }
                     break;
                     
                     case 8:
-                    // Ajustar posição ocupada
-                    if (matPosi[2][1] == jogador_vez){
-                        printf("POSICAO JA OCUPADA!\n");
-                        printf("ESCOLHA NOVAMENTE...\n");
-                    }
-                    else
-                    {
+
                         matPosi[2][1] = jogador_vez;
                             
-                    }
                     break;
                     
                     case 9:
-                    // Ajustar posição ocupada
-                    if (matPosi[2][2] == jogador_vez){
-                        printf("POSICAO JA OCUPADA!\n");
-                        printf("ESCOLHA NOVAMENTE...\n");    
-                    }
-                    else
-                    {
+
                         matPosi[2][2] = jogador_vez;
                             
-                    }
                     break;
                             
-                    default:
-                    break;
+                default:
+                break;
                 }
                 
-                teste = 1;
+                troca = 1;
 
                 // Checagem de vitórias 
                 
                 // -- cima
-                if (matPosi[0][0] == jogador_vez && matPosi[0][1] == jogador_vez && matPosi[0][2] == jogador_vez)
+                if (matPosi[0][0] ==  matPosi[0][1]  && matPosi[0][1] == matPosi[0][2]) 
                 {
-                    printf("\nA MAQUINA GANHOU!\n");
-                    printf("\n");
-                    win = 1;        
+                    if (matPosi[0][0] == maquina)
+                    {
+                        printf("\nA MAQUINA GANHOU!!!\n");
+                    }
+                    else
+                    {
+                        printf("O JOGADOR GANHOU!!!");
+                    }
+                    printf("\n");                    
+                    
+                    win = 1;
                 }
                     
                 // | esquerda
-                else if (matPosi[0][0] == jogador_vez && matPosi[1][0] == jogador_vez && matPosi[2][0] == jogador_vez) 
+                else if (matPosi[0][0] ==  matPosi[1][0]  && matPosi[1][0] == matPosi[2][0]) 
                 {
-        
-                    printf("\nA MAQUINA GANHOU!\n");
-                    printf("\n");
+                    if (matPosi[0][0] == maquina)
+                    {
+                        printf("\nA MAQUINA GANHOU!!!\n");
+                    }
+                    else
+                    {
+                        printf("O JOGADOR GANHOU!!!");
+                    }
+                    printf("\n");                    
+                    
                     win = 1;
                 }
                 
                 // -- meio
-                else if (matPosi[1][0] == jogador_vez && matPosi[1][1] == jogador_vez && matPosi[1][2] == jogador_vez)
+                else if (matPosi[1][0] ==  matPosi[1][1]  && matPosi[1][1] == matPosi[1][2]) 
                 {
+                    if (matPosi[1][0] == maquina)
+                    {
+                        printf("\nA MAQUINA GANHOU!!!\n");
+                    }
+                    else
+                    {
+                        printf("O JOGADOR GANHOU!!!");
+                    }
+                    printf("\n");                    
                     
-                    printf("\nA MAQUINA GANHOU!\n");
-                    printf("\n");
                     win = 1;
                 }
                 
                 // -- baixo
-                else if (matPosi[2][0] == jogador_vez && matPosi[2][1] == jogador_vez && matPosi[2][2] == jogador_vez)
+                else if (matPosi[2][0] ==  matPosi[2][1]  && matPosi[1][0] == matPosi[2][2]) 
                 {
+                    if (matPosi[2][0] == maquina)
+                    {
+                        printf("\nA MAQUINA GANHOU!!!\n");
+                    }
+                    else
+                    {
+                        printf("O JOGADOR GANHOU!!!");
+                    }
+                    printf("\n");                    
                     
-                    printf("\nA MAQUINA GANHOU!\n");
-                    printf("\n");
                     win = 1;
                 }
                 
                 // | meio
-                else if (matPosi[0][1] == jogador_vez && matPosi[1][1] == jogador_vez && matPosi[2][1] == jogador_vez)
+                else if (matPosi[0][1] ==  matPosi[1][1]  && matPosi[1][1] == matPosi[2][1]) 
                 {
+                    if (matPosi[0][1] == maquina)
+                    {
+                        printf("\nA MAQUINA GANHOU!!!\n");
+                    }
+                    else
+                    {
+                        printf("O JOGADOR GANHOU!!!");
+                    }
+                    printf("\n");                    
                     
-                    printf("\nA MAQUINA GANHOU!\n");
-                    printf("\n");
                     win = 1;
                 }
                 
                 // | direita
-                else if (matPosi[0][2] == jogador_vez && matPosi[1][2] == jogador_vez && matPosi[2][2] == jogador_vez)
+                else if (matPosi[0][2] ==  matPosi[1][2]  && matPosi[1][2] == matPosi[2][2]) 
                 {
+                    if (matPosi[0][2] == maquina)
+                    {
+                        printf("\nA MAQUINA GANHOU!!!\n");
+                    }
+                    else
+                    {
+                        printf("O JOGADOR GANHOU!!!");
+                    }
+                    printf("\n");                    
                     
-                    printf("\nA MAQUINA GANHOU!\n");
-                    printf("\n");
                     win = 1;
                 }
                 
                 // \ diagonal
-                else if (matPosi[0][0] == jogador_vez && matPosi[1][1] == jogador_vez && matPosi[2][2] == jogador_vez)
+                else if (matPosi[0][0] ==  matPosi[1][1]  && matPosi[1][1] == matPosi[2][2]) 
                 {
+                    if (matPosi[0][0] == maquina)
+                    {
+                        printf("\nA MAQUINA GANHOU!!!\n");
+                    }
+                    else
+                    {
+                        printf("O JOGADOR GANHOU!!!");
+                    }
+                    printf("\n");                    
                     
-                    printf("\nA MAQUINA GANHOU!\n");
-                    printf("\n");
                     win = 1;
                 }
                 
                 // / diagonal
-                else if (matPosi[0][2] == jogador_vez && matPosi[1][1] == jogador_vez && matPosi[2][0] == jogador_vez)
+                else if (matPosi[0][2] ==  matPosi[1][1]  && matPosi[1][1] == matPosi[2][0]) 
                 {
+                    if (matPosi[0][2] == maquina)
+                    {
+                        printf("\nA MAQUINA GANHOU!!!\n");
+                    }
+                    else
+                    {
+                        printf("O JOGADOR GANHOU!!!");
+                    }
+                    printf("\n");                    
                     
-                    printf("\nA MAQUINA GANHOU!\n");
-                    printf("\n");
                     win = 1;
                 }
                 
