@@ -2,15 +2,17 @@
 #include <stdlib.h>
 
 void printf_tabuleiro(char matPosi[3][3]){
-   printf("\t     |     |     \n");
-   printf("\t  %c  |  %c  |  %c  \n", matPosi[0][0],matPosi[0][1],matPosi[0][2]);
-   printf("\t_____|_____|_____\n");
-   printf("\t     |     |     \n");
-   printf("\t  %c  |  %c  |  %c  \n", matPosi[1][0],matPosi[1][1],matPosi[1][2]);
-   printf("\t_____|_____|_____\n");
-   printf("\t     |     |     \n");
-   printf("\t  %c  |  %c  |  %c  \n", matPosi[2][0],matPosi[2][1],matPosi[2][2]);
-   printf("\t     |     |     \n");
+    
+    printf("========= JOGO DA VELHA =========\n\n");
+    printf("\t     |     |     \n");
+    printf("\t  %c  |  %c  |  %c  \n", matPosi[0][0],matPosi[0][1],matPosi[0][2]);
+    printf("\t_____|_____|_____\n");
+    printf("\t     |     |     \n");
+    printf("\t  %c  |  %c  |  %c  \n", matPosi[1][0],matPosi[1][1],matPosi[1][2]);
+    printf("\t_____|_____|_____\n");
+    printf("\t     |     |     \n");
+    printf("\t  %c  |  %c  |  %c  \n", matPosi[2][0],matPosi[2][1],matPosi[2][2]);
+    printf("\t     |     |     \n");
 
 }
 
@@ -194,7 +196,6 @@ void main(){
     // Contador de jogadas
     int cont = 0;
 
-    printf("\t========== JOGO DA VELHA ==========\n");
 
         // Reiniciar o jogo
         while (jogar == 1)
