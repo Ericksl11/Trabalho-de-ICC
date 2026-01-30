@@ -226,6 +226,15 @@ void main(){
                         printf("1- Humano\n2- Maquina\n");
                         scanf("%d", &escolha);
                     
+                    // Verificar se a escolha é válida
+                    if (escolha < 0 || escolha > 2)
+                    {
+                        printf("Opcao invalida!!\n");
+                        printf("Escolha novamente...\n");
+                        scanf("%d", &escolha);
+                    }
+                    
+
                     // Definir quem começa
                     if (escolha == 1)
                     {
@@ -235,8 +244,7 @@ void main(){
                     {
                         jogador_vez = maquina;
                     }
-                    }
-                    
+                    }                    
                     
 
                 printf_tabuleiro(matPosi);
@@ -260,8 +268,6 @@ void main(){
                         
                         
                     }
-                    
-                
 
                 // Verificar se a jogada é válida dentro do tabuleiro
                 if (jogada < 0 || jogada > 9)
@@ -359,8 +365,6 @@ void main(){
                 default:
                 break;
                 }
-                
-                
 
                 // Atribuir X ou O no tabuleiro
                 switch (jogada)
@@ -428,7 +432,7 @@ void main(){
                 // Checagem de vitórias 
                 
                 // -- cima
-                if (matPosi[0][0] ==  matPosi[0][1]  && matPosi[0][1] == matPosi[0][2]) 
+                if (matPosi[0][0] ==  maquina && matPosi[0][1] == maquina && matPosi[0][2] == maquina) 
                 {
                     if (matPosi[0][0] == maquina)
                     {
@@ -476,7 +480,7 @@ void main(){
                 }
                 
                 // -- baixo
-                else if (matPosi[2][0] ==  matPosi[2][1]  && matPosi[1][0] == matPosi[2][2]) 
+                else if (matPosi[2][0] ==  matPosi[2][1]  && matPosi[2][1] == matPosi[2][2]) 
                 {
                     if (matPosi[2][0] == maquina)
                     {
